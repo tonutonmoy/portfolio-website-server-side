@@ -29,9 +29,27 @@ const getExperienceToDB = async () => {
 
   return result;
 };
+const getSingleExperienceToDB = async (_id: string) => {
+  const res = await experienceModel.findOne({ _id });
 
-const updateExperienceToDB = async (id: string, data: any) => {
-  const res = await experienceModel.updateOne({ id }, data);
+  const result = {
+    experience: res,
+  };
+
+  return result;
+};
+
+const updateExperienceToDB = async (_id: string, data: any) => {
+  const res = await experienceModel.updateOne({ _id }, data);
+
+  const result = {
+    experience: res,
+  };
+
+  return result;
+};
+const deleteExperienceToDB = async (_id: string) => {
+  const res = await experienceModel.deleteOne({ _id });
 
   const result = {
     experience: res,
@@ -44,4 +62,6 @@ export const ExperienceServices = {
   createExperienceToDB,
   getExperienceToDB,
   updateExperienceToDB,
+  deleteExperienceToDB,
+  getSingleExperienceToDB,
 };

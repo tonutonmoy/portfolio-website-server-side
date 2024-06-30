@@ -24,8 +24,50 @@ const getSkills = catchAsync(async (req, res) => {
     data: result,
   });
 });
+const getSingleSkills = catchAsync(async (req, res) => {
+  const id = req?.params?.id;
+  const result = await SkillsServices.getSingleSkillsToDB(id);
+
+  res.send({
+    statusCode: 201,
+    success: true,
+
+    message: "Get Single Skills successful",
+    data: result,
+  });
+});
+const updateSkills = catchAsync(async (req, res) => {
+  const id = req?.params?.id;
+  const data = req?.body;
+
+  const result = await SkillsServices.updateSkillsToDB(id, data);
+
+  res.send({
+    statusCode: 203,
+    success: true,
+
+    message: "Update Single Skills successful",
+    data: result,
+  });
+});
+const deleteSkills = catchAsync(async (req, res) => {
+  const id = req?.params?.id;
+
+  const result = await SkillsServices.deleteSkillsToDB(id);
+
+  res.send({
+    statusCode: 204,
+    success: true,
+
+    message: "Delete Single Skills successful",
+    data: result,
+  });
+});
 
 export const SkillsControllers = {
   createSkills,
   getSkills,
+  getSingleSkills,
+  updateSkills,
+  deleteSkills,
 };

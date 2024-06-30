@@ -29,8 +29,38 @@ const getSkillsToDB = async () => {
 
   return result;
 };
+const getSingleSkillsToDB = async (_id: string) => {
+  const res = await SkillsModel.findOne({ _id });
+
+  const result = {
+    skills: res,
+  };
+
+  return result;
+};
+const updateSkillsToDB = async (_id: string, data: any) => {
+  const res = await SkillsModel.updateOne({ _id }, data);
+
+  const result = {
+    skills: res,
+  };
+
+  return result;
+};
+const deleteSkillsToDB = async (_id: string) => {
+  const res = await SkillsModel.deleteOne({ _id });
+
+  const result = {
+    skills: res,
+  };
+
+  return result;
+};
 
 export const SkillsServices = {
   createSkillsToDB,
   getSkillsToDB,
+  getSingleSkillsToDB,
+  updateSkillsToDB,
+  deleteSkillsToDB,
 };

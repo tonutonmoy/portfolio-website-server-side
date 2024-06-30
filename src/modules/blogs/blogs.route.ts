@@ -16,6 +16,6 @@ router.get("/getBlogs", BlogsControllers.getBlogs);
 router.get("/getSingleBlog/:id", BlogsControllers.getSingleBlog);
 
 router.put("/updateSingleBlog/:id", BlogsControllers.updateBlog);
-router.put("/deleteSingleBlog/:id", BlogsControllers.deleteBlog);
+router.delete("/deleteSingleBlog/:id", BlogsControllers.deleteBlog);
 
 export const BlogsRoutes = router;

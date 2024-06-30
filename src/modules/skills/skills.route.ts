@@ -13,5 +13,8 @@ router.post(
   SkillsControllers.createSkills
 );
 router.get("/getSkills", SkillsControllers.getSkills);
+router.get("/getSingleSkills/:id", SkillsControllers.getSingleSkills);
+router.put("/updateSkills/:id", SkillsControllers.updateSkills);
+router.delete("/deleteSkills/:id", SkillsControllers.deleteSkills);
 
 export const SkillsRoutes = router;
