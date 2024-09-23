@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://my-portfolio-fa955.web.app/",
+    origin: "https://my-portfolio-fa955.web.app",
     credentials: true,
   })
 );
@@ -20,7 +20,7 @@ app.use(
 //   })
 // );
 
-app.use("api", router);
+app.use("/api", router);
 
 app.use(globalErrorHandler);
 
